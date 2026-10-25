@@ -1,0 +1,2250 @@
+{
+ "manifest": {
+  "rules_version": "hexwar-lab-v14",
+  "candidate": "amber-fern-locked",
+  "lab": "/home/giblfiz/projects/games/hexwar-book",
+  "lab_commit": "678cc69d5e3777e302bf7cc10ef8b00156853625",
+  "lab_dirty": false,
+  "engine_sha256": "2f98bda6690f0a3902d0f8e23f4d8a8ed27e5a693e97087a35db250098a58da2",
+  "synced": "2026-09-29T10:00:54-0700",
+  "deadline_actions": 84
+ },
+ "armies": {
+  "orc": {
+   "name": "thorn-hawk-9dcf73b91a",
+   "counts": {
+    "cleaver": 4,
+    "king": 1,
+    "lancer": 6,
+    "ram": 4
+   },
+   "army": {
+    "faction": "orc",
+    "groups": [
+     [
+      "cleaver",
+      "cleaver"
+     ],
+     [
+      "lancer",
+      "lancer"
+     ],
+     [
+      "lancer",
+      "lancer"
+     ],
+     [
+      "ram",
+      "ram"
+     ],
+     [
+      "lancer",
+      "lancer"
+     ],
+     [
+      "cleaver",
+      "cleaver"
+     ],
+     [
+      "ram",
+      "ram"
+     ]
+    ],
+    "deployment": {
+     "king": [
+      -2,
+      4
+     ],
+     "moves": [
+      {
+       "from": [
+        -2,
+        2
+       ],
+       "to": [
+        -2,
+        3
+       ],
+       "kind": "lancer"
+      },
+      {
+       "from": [
+        0,
+        2
+       ],
+       "to": [
+        -1,
+        3
+       ],
+       "kind": "lancer"
+      }
+     ]
+    }
+   }
+  },
+  "necro": {
+   "name": "jade-wolf-4f5fd19ee2",
+   "counts": {
+    "dragoon": 2,
+    "ghost": 2,
+    "king": 1,
+    "revenant": 2,
+    "triskelion": 2
+   },
+   "army": {
+    "faction": "necro",
+    "groups": [
+     null,
+     [
+      "revenant",
+      "revenant"
+     ],
+     [
+      "ghost",
+      "ghost"
+     ],
+     null,
+     [
+      "dragoon",
+      "dragoon"
+     ],
+     null,
+     [
+      "triskelion",
+      "triskelion"
+     ]
+    ],
+    "deployment": {
+     "king": [
+      -2,
+      4
+     ],
+     "moves": []
+    }
+   }
+  },
+  "fey": {
+   "name": "amber-fern-80a965f810",
+   "counts": {
+    "charmed_strider": 6,
+    "crowned_lancer": 1,
+    "enchanter": 2,
+    "queen": 1,
+    "universal": 1
+   },
+   "army": {
+    "faction": "fey",
+    "king_kind": "crowned_lancer",
+    "groups": [
+     null,
+     [
+      "enchanter",
+      "enchanter"
+     ],
+     [
+      "charmed_strider",
+      "charmed_strider"
+     ],
+     [
+      "charmed_strider",
+      "charmed_strider"
+     ],
+     [
+      "charmed_strider",
+      "charmed_strider"
+     ],
+     null,
+     [
+      "universal",
+      "queen"
+     ]
+    ],
+    "singles": [],
+    "deployment": {
+     "king": [
+      -2,
+      4
+     ],
+     "moves": []
+    }
+   }
+  }
+ },
+ "setups": {
+  "orc-orc": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "king",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 2,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 2,
+     "r": 2,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 3,
+     "kind": "ram",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 3,
+     "kind": "ram",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 4,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 4,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "ram",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "ram",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "king",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -2,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -2,
+     "r": -2,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -3,
+     "kind": "ram",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -3,
+     "kind": "ram",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -4,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -4,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "ram",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "ram",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "orc-necro": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "king",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 2,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 2,
+     "r": 2,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 3,
+     "kind": "ram",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 3,
+     "kind": "ram",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 4,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 4,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "ram",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "ram",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "king",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "revenant",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "revenant",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -2,
+     "kind": "ghost",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -2,
+     "kind": "ghost",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "dragoon",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "dragoon",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "triskelion",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "triskelion",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "orc-fey": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "king",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 2,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 2,
+     "r": 2,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 3,
+     "kind": "ram",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 3,
+     "kind": "ram",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 4,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 4,
+     "kind": "cleaver",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "ram",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "ram",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "crowned_lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "enchanter",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "enchanter",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -2,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -2,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "universal",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "queen",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "necro-orc": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "king",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "revenant",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "revenant",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 2,
+     "kind": "ghost",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 2,
+     "kind": "ghost",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "dragoon",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "dragoon",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "triskelion",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "triskelion",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "king",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -2,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -2,
+     "r": -2,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -3,
+     "kind": "ram",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -3,
+     "kind": "ram",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -4,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -4,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "ram",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "ram",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "necro-necro": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "king",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "revenant",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "revenant",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 2,
+     "kind": "ghost",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 2,
+     "kind": "ghost",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "dragoon",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "dragoon",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "triskelion",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "triskelion",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "king",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "revenant",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "revenant",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -2,
+     "kind": "ghost",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -2,
+     "kind": "ghost",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "dragoon",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "dragoon",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "triskelion",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "triskelion",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "necro-fey": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "king",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "revenant",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "revenant",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 2,
+     "kind": "ghost",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 2,
+     "kind": "ghost",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "dragoon",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "dragoon",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "triskelion",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "triskelion",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "crowned_lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "enchanter",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "enchanter",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -2,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -2,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "universal",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "queen",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "fey-orc": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "crowned_lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "enchanter",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "enchanter",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 2,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 2,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "universal",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "queen",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "king",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -2,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -2,
+     "r": -2,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -3,
+     "kind": "ram",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -3,
+     "kind": "ram",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -4,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -4,
+     "kind": "cleaver",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "ram",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "ram",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "fey-necro": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "crowned_lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "enchanter",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "enchanter",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 2,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 2,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "universal",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "queen",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "king",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "revenant",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "revenant",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -2,
+     "kind": "ghost",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -2,
+     "kind": "ghost",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "dragoon",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "dragoon",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "triskelion",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "triskelion",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  },
+  "fey-fey": {
+   "rules_version": "hexwar-lab-v14",
+   "radius": 4,
+   "board": [
+    {
+     "q": -2,
+     "r": 4,
+     "kind": "crowned_lancer",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 2,
+     "kind": "enchanter",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 2,
+     "kind": "enchanter",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -2,
+     "r": 2,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 2,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -4,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 1,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": 0,
+     "r": 3,
+     "kind": "charmed_strider",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": -3,
+     "r": 4,
+     "kind": "universal",
+     "side": 0,
+     "facing": 1
+    },
+    {
+     "q": -1,
+     "r": 4,
+     "kind": "queen",
+     "side": 0,
+     "facing": 0
+    },
+    {
+     "q": 2,
+     "r": -4,
+     "kind": "crowned_lancer",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -2,
+     "kind": "enchanter",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -2,
+     "kind": "enchanter",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 2,
+     "r": -2,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -2,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 4,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": -1,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 0,
+     "r": -3,
+     "kind": "charmed_strider",
+     "side": 1,
+     "facing": 3
+    },
+    {
+     "q": 3,
+     "r": -4,
+     "kind": "universal",
+     "side": 1,
+     "facing": 4
+    },
+    {
+     "q": 1,
+     "r": -4,
+     "kind": "queen",
+     "side": 1,
+     "facing": 3
+    }
+   ],
+   "turn": 0,
+   "reserves": [
+    0,
+    0
+   ],
+   "ply": 0,
+   "history": []
+  }
+ },
+ "reach": {
+  "charmed_strider": {
+   "moves": [
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 145
+  },
+  "cleaver": {
+   "moves": [
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     2,
+     0
+    ]
+   ],
+   "rotates": false,
+   "directional": false,
+   "value": 200
+  },
+  "crowned_lancer": {
+   "moves": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -3
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 0
+  },
+  "dragoon": {
+   "moves": [
+    [
+     -3,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -3
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     3,
+     -3
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 250
+  },
+  "enchanter": {
+   "moves": [
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 220
+  },
+  "ghost": {
+   "moves": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "rotates": false,
+   "directional": false,
+   "value": 180
+  },
+  "king": {
+   "moves": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "rotates": false,
+   "directional": false,
+   "value": 0
+  },
+  "lancer": {
+   "moves": [
+    [
+     0,
+     -3
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 180
+  },
+  "queen": {
+   "moves": [
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -4
+    ],
+    [
+     0,
+     -3
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 550
+  },
+  "ram": {
+   "moves": [
+    [
+     -4,
+     0
+    ],
+    [
+     -4,
+     4
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -3,
+     3
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -2,
+     2
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     -1,
+     1
+    ],
+    [
+     0,
+     -4
+    ],
+    [
+     0,
+     -3
+    ],
+    [
+     0,
+     -2
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     0
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     2,
+     0
+    ],
+    [
+     3,
+     -3
+    ],
+    [
+     3,
+     0
+    ],
+    [
+     4,
+     -4
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "rotates": false,
+   "directional": false,
+   "value": 260
+  },
+  "revenant": {
+   "moves": [
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     -1
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 160
+  },
+  "triskelion": {
+   "moves": [
+    [
+     -4,
+     0
+    ],
+    [
+     -3,
+     0
+    ],
+    [
+     -2,
+     0
+    ],
+    [
+     -1,
+     0
+    ],
+    [
+     0,
+     1
+    ],
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     2,
+     -2
+    ],
+    [
+     3,
+     -3
+    ],
+    [
+     4,
+     -4
+    ]
+   ],
+   "rotates": true,
+   "directional": true,
+   "value": 375
+  },
+  "universal": {
+   "moves": [],
+   "rotates": false,
+   "directional": false,
+   "value": 300
+  }
+ }
+}
