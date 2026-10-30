@@ -256,6 +256,11 @@ def poll(event_dir, *, client=None, now=None, judge_fn=None):
                 if current<freeze_at:
                     state['phase']='registration_open' if current<=_time(charter['payload']['registration_deadline']) else 'registration_grace'
                     return _status(root,state,current)
+                # Sponsor-authorized organizer participation needs an explicit public
+                # amendment; never fabricate a timely second registration here.
+                if len(selected)==1 and (root/'organizer-fallback-authorized').is_file():
+                    state['phase']='organizer_entry_required'
+                    return _status(root,state,current)
                 plan=_freeze_plan(cfg,key,charter,selected,current)
                 plan['config_hash']=signing.digest(cfg); plan['charter_hash']=signing.digest(charter)
                 _write(freeze_path,plan)  # Durable decision before writing any public artifact/outbox item.

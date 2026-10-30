@@ -118,6 +118,21 @@ class OperatorTests(unittest.TestCase):
         cancellation=signing.verify(self.read('cancellation.json'),signing.public_hex(self.key))
         self.assertEqual(cancellation['entrants'],0)
 
+    def test_authorized_single_entrant_waits_for_organizer_not_cancellation(self):
+        (self.root/'organizer-fallback-authorized').write_text('sponsor authorization')
+        client=FakeClient([self.registration(0)])
+        for seconds in (3600, 4200):
+            result=op.poll(self.root,client=client,now=at(seconds))
+            self.assertEqual(result['phase'],'organizer_entry_required')
+            self.assertEqual(result['counts']['admitted'],1)
+            self.assertFalse((self.root/'.operator/freeze-plan.json').exists())
+            self.assertFalse((self.root/'outbox').exists())
+
+    def test_fallback_does_not_prevent_zero_entrant_cancellation(self):
+        (self.root/'organizer-fallback-authorized').touch()
+        result=op.poll(self.root,client=FakeClient(),now=at(3600))
+        self.assertEqual(result['phase'],'cancelled_pending_notice')
+
     def test_stop_prevents_network_and_signing(self):
         (self.root/'STOP').touch()
         (self.root/'operator-config.json').unlink()

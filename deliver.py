@@ -12,6 +12,10 @@ from event_operator import _read, _write, _time, _iso
 from moltbook import MoltbookClient, MoltbookError, SAFE_ID, publication_time
 
 
+def _squash(word):
+    return re.sub(r'([a-z])\1+',r'\1',word)
+
+
 def solve_challenge(text):
     """Recognize only a narrow two-operand arithmetic grammar; never execute text."""
     if not isinstance(text,str) or len(text)>2000: raise ValueError('challenge bounds')
@@ -24,8 +28,13 @@ def solve_challenge(text):
     nums.update(dict(twenty=20,thirty=30,forty=40,fifty=50,sixty=60,seventy=70,eighty=80,ninety=90))
     for tens in ('twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'):
         for unit in names[1:10]:nums[tens+unit]=nums[tens]+nums[unit]
+    # Obfuscation also doubles letters ("lOosEs"); compare words with repeats squashed.
+    nums={_squash(k):v for k,v in nums.items()}
+    if len(nums)!=len(names)+8+72:raise ValueError('number vocabulary collision')
+    names=[_squash(n) for n in names]
+    clean=' '.join(_squash(w) for w in clean.split())
     words=clean.split(); values=[]; i=0
-    unsupported={'hundred','thousand','million','billion','point','negative','decimal','fraction','percent','percentage','squared','cubed','power','dozen'}
+    unsupported={_squash(w) for w in ('hundred','thousand','million','billion','point','negative','decimal','fraction','percent','percentage','squared','cubed','power','dozen')}
     if unsupported.intersection(words):raise ValueError('unsupported arithmetic phrase')
     while i<len(words):
         w=words[i]
@@ -40,7 +49,7 @@ def solve_challenge(text):
     if re.search(r'\b(times|multiplied|multiply|product)\b',clean):ops.append('mul')
     if re.search(r'\b(divided|divide|quotient)\b',clean):ops.append('div')
     if re.search(r'\b(minus|subtract|loses|decreases|slows)\b',clean):ops.append('sub')
-    if re.search(r'\b(plus|adds|added|addition|sum)\b',clean):ops.append('add')
+    if re.search(r'\b(plus|ads|aded|adition|sum|gains|increases)\b',clean):ops.append('add')
     if not ops and 'total' in words and 'each' not in words:ops=['add']
     if len(set(ops))!=1: raise ValueError('ambiguous operation')
     if ops[0]=='sub' and 'from' in words:raise ValueError('ambiguous subtraction order')
@@ -158,6 +167,13 @@ def tick(event_dir,*,client=None,now=None):
                 item['state']='needs_review';item['error']='missing_publication_metadata';_write(path,item)
                 return {'phase':'needs_review','item':item['id'],'needs_review':reviews}
             item['publication_id']=obj['id'];item['published_at']=published
+            # Moltbook dedups identical content by returning the EXISTING object (no new
+            # challenge). An old hidden post must never be recorded as a fresh publication.
+            known={r.get('publication_id') for p in list((root/'outbox').glob('*.json'))+list((root/'outbox-resolved').glob('*.json'))
+                   if p!=path for r in [_read(p)] if type(r) is dict}
+            if obj['id'] in known or _time(published)<current-timedelta(seconds=120):
+                item['state']='needs_review';item['error']='returned_existing_publication';_write(path,item)
+                return {'phase':'needs_review','item':item['id'],'error':item['error'],'needs_review':reviews}
             verification=_challenge(response)
             item['verification']=verification
             item['state']='verifying' if verification is not None else 'published'

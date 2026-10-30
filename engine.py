@@ -36,7 +36,8 @@ def checked_bytes(path: Path, expected: str) -> bytes:
 
 
 class Engine:
-    def __init__(self, bundle: Path | str = BUNDLE):
+    def __init__(self, bundle: Path | str = BUNDLE, timeout: float = 10):
+        self.timeout = timeout
         bundle = Path(bundle)
         binary = bundle / "hexwar-engine"
         checked_bytes(binary, ENGINE_SHA256)
@@ -53,9 +54,9 @@ class Engine:
             raise EngineError("engine is not running")
         self.process.stdin.write(json.dumps(request, allow_nan=False) + "\n")
         self.process.stdin.flush()
-        if not self.selector.select(timeout=10):
+        if not self.selector.select(timeout=self.timeout):
             self.close()
-            raise EngineError("engine response exceeded 10 seconds")
+            raise EngineError(f"engine response exceeded {self.timeout} seconds")
         line = self.process.stdout.readline()
         if not line:
             raise EngineError("engine closed its output")
@@ -98,7 +99,10 @@ class Series:
     faction games use the frozen initiative order. A posts the opening batch.
     """
 
-    def __init__(self, engine: Engine, wildcard=("orc", "orc"), mirror_first="A"):
+    def __init__(self, engine: Engine, wildcard=("orc", "orc"), mirror_first="A", games=None):
+        """`games` optionally replaces the seven-game layout with a list of
+        [A_faction, B_faction, mirror_first] entries (bounty matches use 24).
+        Cross-faction entries still follow the frozen initiative order."""
         if (not isinstance(wildcard, (tuple, list)) or len(wildcard) != 2
                 or any(f not in INITIATIVE for f in wildcard)):
             raise BatchError("wildcard must contain A's and B's valid factions")
@@ -110,11 +114,22 @@ class Series:
         self.boards = {}
         self.next_actor = "A"
         self.batch_index = 0
-        pairs = [("orc", "necro"), ("necro", "orc"),
-                 ("orc", "fey"), ("fey", "orc"),
-                 ("necro", "fey"), ("fey", "necro"), tuple(wildcard)]
-        for i, (fa, fb) in enumerate(pairs, 1):
-            a_first = mirror_first == "A" if fa == fb else INITIATIVE[fa] < INITIATIVE[fb]
+        if games is None:
+            pairs = [("orc", "necro"), ("necro", "orc"),
+                     ("orc", "fey"), ("fey", "orc"),
+                     ("necro", "fey"), ("fey", "necro"), tuple(wildcard)]
+            layout = [(fa, fb, mirror_first) for fa, fb in pairs]
+        else:
+            if not isinstance(games, (list, tuple)) or not 1 <= len(games) <= 32:
+                raise BatchError("games must list 1..32 boards")
+            layout = []
+            for g in games:
+                if (not isinstance(g, (list, tuple)) or len(g) != 3
+                        or g[0] not in INITIATIVE or g[1] not in INITIATIVE or g[2] not in ("A", "B")):
+                    raise BatchError("each game must be [A_faction, B_faction, mirror_first]")
+                layout.append(tuple(g))
+        for i, (fa, fb, first) in enumerate(layout, 1):
+            a_first = first == "A" if fa == fb else INITIATIVE[fa] < INITIATIVE[fb]
             owners = ["A", "B"] if a_first else ["B", "A"]
             factions = [fa, fb] if a_first else [fb, fa]
             state = copy.deepcopy(engine.snapshot["setups"]["-".join(factions)])

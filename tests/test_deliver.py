@@ -49,6 +49,23 @@ class DeliverTests(unittest.TestCase):
         deliver.tick(self.root,client=client,now=NOW+timedelta(seconds=70))
         self.assertEqual(len(client.calls),1)
 
+    def test_dedup_returning_known_publication_is_not_published(self):
+        (self.root/'outbox-resolved').mkdir()
+        op._write(self.root/'outbox-resolved'/'old.json',{'id':'old','publication_id':'post-1'})
+        self.item(kind='post',submolt='agents',title='t')
+        client=FakeClient(response={'post':{'id':'post-1','created_at':iso()}})
+        result=deliver.tick(self.root,client=client,now=NOW)
+        self.assertEqual(result['phase'],'needs_review')
+        self.assertEqual(self.get()['error'],'returned_existing_publication')
+
+    def test_stale_returned_object_is_not_published(self):
+        self.item(kind='post',submolt='agents',title='t')
+        client=FakeClient(response={'post':{'id':'post-2','created_at':iso(-7200)}})
+        result=deliver.tick(self.root,client=client,now=NOW)
+        self.assertEqual(result['phase'],'needs_review')
+        again=deliver.tick(self.root,client=client,now=NOW+timedelta(seconds=70))
+        self.assertEqual(len(client.calls),1);self.assertEqual(again['needs_review'],['a'])
+
     def test_unknown_write_failure_is_not_retried_and_stays_visible(self):
         self.item();client=FakeClient(error=MoltbookError('private transport prose'))
         result=deliver.tick(self.root,client=client,now=NOW)
@@ -72,7 +89,7 @@ class DeliverTests(unittest.TestCase):
         self.assertEqual(result['phase'],'pending');self.assertEqual(self.get()['next_at'],iso(125))
         again=deliver.tick(self.root,client=FakeClient(),now=NOW+timedelta(seconds=70))
         self.assertEqual(again['phase'],'cooldown')
-        good=FakeClient();deliver.tick(self.root,client=good,now=NOW+timedelta(seconds=126))
+        good=FakeClient(response={'comment':{'id':'comment-1','created_at':iso(126)}});deliver.tick(self.root,client=good,now=NOW+timedelta(seconds=126))
         self.assertEqual(len(good.calls),1);self.assertEqual(self.get()['state'],'published')
         self.assertEqual(self.get('b')['state'],'pending')
 
@@ -161,7 +178,9 @@ class ChallengeTests(unittest.TestCase):
     def test_narrow_arithmetic_and_obfuscated_words(self):
         for text,expected in [('Twenty three plus five','28.00'),('Twenty-five plus three','28.00'),
                               ('t]w]e]n]t]y f]i]v]e plus three','28.00'),('10 minus 3','7.00'),
-                              ('7 times 9','63.00'),('107 divided by 40','2.68')]:
+                              ('7 times 9','63.00'),('107 divided by 40','2.68'),('100 plus 11','111.00'),
+                              ('A] lOoObSst-Errr ] sWImMs^ aT/ TwEnTy ThReE ] cEnTiMeTeRsPeR/ sEcOnD ~ BuT^ dUrInG dRaG iT lOosEs] SeVeN ] cEnTiMeTeRsPeR] sEcOnD, wHaT/ iS ] tHe^ nEw veLoAwCiTeE?','16.00'),
+                              ('tWeNnTyy fIvE pLuUs tHrEe','28.00')]:
             self.assertEqual(deliver.solve_challenge(text),expected)
     def test_ambiguous_math_goes_to_review(self):
         for text in ('2.5 plus 3.5','-2 plus 3','one hundred plus two','subtract two from five',
