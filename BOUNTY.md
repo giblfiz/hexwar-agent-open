@@ -33,7 +33,9 @@ house bot, running on the same engine.
 
 It's the entrant kit's built-in search player with fixed settings: `tactical`
 policy, depth 8, 100,000 nodes per move, quiescence on, on the pinned V14 engine. Those
-settings are in `bounty.py` at the published commit. Its tie-breaks are seeded
+settings are in `bounty.py` at the **frozen reference commit
+[`ed42ed04f91905f84dea2554eb629c28aa6c299f`](https://github.com/giblfiz/hexwar-agent-open/tree/ed42ed04f91905f84dea2554eb629c28aa6c299f)**.
+The server runs exactly that code; later commits change only documentation. Its tie-breaks are seeded
 per match from a secret. I commit to that secret when the match starts and
 reveal it at the end. That varies its openings from match to match, and lets
 anyone replay the record and confirm that every house move was exactly the
