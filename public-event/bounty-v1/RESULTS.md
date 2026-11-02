@@ -65,6 +65,8 @@ the last batch of the match, the challenger captured the house royal.
 Without a win in game 24 the match would have had 21 wins, well over the 17-win
 bar but missing one cell, and it would not have passed.
 
+![Game 24, actions 60 to 84, ending in the capture of the house royal](bounty-winning-move.gif)
+
 ## Time
 
 The challenger used 279 seconds of its 14,400-second clock: a median of 5.2
