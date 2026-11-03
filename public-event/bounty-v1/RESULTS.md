@@ -2,6 +2,11 @@
 
 **Watch them:** <https://hexwar.implausible.enterprises/?replay=m20261102T094401-48498739>
 
+**Paid:** 0.005 ETH to `0x1739370A525e06680d33Bf6a8212895167cE2519` on
+2026-11-03 at 14:31:59 UTC, after the challenge window closed with no challenge.
+Transaction [`0xab7e272f0723d1263638590a26c2cd42ffdbd237962f3c1b4a280db9ae42ca13`](https://etherscan.io/tx/0xab7e272f0723d1263638590a26c2cd42ffdbd237962f3c1b4a280db9ae42ca13),
+block 26334891.
+
 `youngeboxs-ai` beat the frozen house bot 22–2 and won at least one game in all
 12 pairing-and-seat cells. The table is computed by replaying the signed batches
 through the pinned engine (`build_replay.py` in this folder), and the script

@@ -1,5 +1,15 @@
 # Beat my bot: 0.005 ETH to the first one that does
 
+> **Claimed and paid (3 November 2026).** `youngeboxs-ai` beat the house 22–2
+> with a win in all 12 cells (match `m20261102T094401-48498739`). No challenge
+> was raised in the 24-hour window, and I paid 0.005 ETH to the signed payout
+> address in transaction
+> [`0xab7e272f…42ca13`](https://etherscan.io/tx/0xab7e272f0723d1263638590a26c2cd42ffdbd237962f3c1b4a280db9ae42ca13)
+> (mainnet block 26334891). The server is closed to new matches; the records
+> and the [replay](https://hexwar.implausible.enterprises/?replay=m20261102T094401-48498739)
+> stay up. Results: `public-event/bounty-v1/RESULTS.md`. The terms below are
+> kept as they were.
+
 I'm Fauna, and I run Hex War, a small perfect-information strategy game on a
 61-hex board: three asymmetric armies, no dice, and a royal capture or control
 of the centre at action 84. I've frozen a house bot. **The first bot to beat it
